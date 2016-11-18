@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851C5A341DDE954700A1E493 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C5A331DDE954700A1E493 /* SettingsViewController.swift */; };
+		851C5A361DDE983800A1E493 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C5A351DDE983800A1E493 /* SearchViewController.swift */; };
 		857C0E4C1DDE8AFD002D8C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E4B1DDE8AFD002D8C00 /* AppDelegate.swift */; };
 		857C0E4E1DDE8AFD002D8C00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E4D1DDE8AFD002D8C00 /* ViewController.swift */; };
 		857C0E511DDE8AFD002D8C00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 857C0E4F1DDE8AFD002D8C00 /* Main.storyboard */; };
-		857C0E531DDE8AFD002D8C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857C0E521DDE8AFD002D8C00 /* Assets.xcassets */; };
 		857C0E561DDE8AFD002D8C00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 857C0E541DDE8AFD002D8C00 /* LaunchScreen.storyboard */; };
 		857C0E611DDE8AFD002D8C00 /* MyPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E601DDE8AFD002D8C00 /* MyPlacesTests.swift */; };
 		857C0E6C1DDE8AFD002D8C00 /* MyPlacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E6B1DDE8AFD002D8C00 /* MyPlacesUITests.swift */; };
+		857C0E7A1DDE8DB4002D8C00 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857C0E791DDE8DB4002D8C00 /* images.xcassets */; };
+		857C0E7C1DDE8EA4002D8C00 /* NewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E7B1DDE8EA4002D8C00 /* NewCollectionViewController.swift */; };
+		857C0E7F1DDE915A002D8C00 /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E7E1DDE915A002D8C00 /* CollectionDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		851C5A331DDE954700A1E493 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		851C5A351DDE983800A1E493 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		857C0E481DDE8AFD002D8C00 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		857C0E4B1DDE8AFD002D8C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		857C0E4D1DDE8AFD002D8C00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		857C0E501DDE8AFD002D8C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		857C0E521DDE8AFD002D8C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		857C0E551DDE8AFD002D8C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		857C0E571DDE8AFD002D8C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		857C0E5C1DDE8AFD002D8C00 /* MyPlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +52,9 @@
 		857C0E671DDE8AFD002D8C00 /* MyPlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		857C0E6B1DDE8AFD002D8C00 /* MyPlacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesUITests.swift; sourceTree = "<group>"; };
 		857C0E6D1DDE8AFD002D8C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857C0E791DDE8DB4002D8C00 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		857C0E7B1DDE8EA4002D8C00 /* NewCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCollectionViewController.swift; sourceTree = "<group>"; };
+		857C0E7E1DDE915A002D8C00 /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,13 @@
 		857C0E4A1DDE8AFD002D8C00 /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				857C0E7D1DDE8EAF002D8C00 /* View Controller */,
 				857C0E4B1DDE8AFD002D8C00 /* AppDelegate.swift */,
 				857C0E4D1DDE8AFD002D8C00 /* ViewController.swift */,
 				857C0E4F1DDE8AFD002D8C00 /* Main.storyboard */,
-				857C0E521DDE8AFD002D8C00 /* Assets.xcassets */,
 				857C0E541DDE8AFD002D8C00 /* LaunchScreen.storyboard */,
 				857C0E571DDE8AFD002D8C00 /* Info.plist */,
+				857C0E791DDE8DB4002D8C00 /* images.xcassets */,
 			);
 			path = MyPlaces;
 			sourceTree = "<group>";
@@ -123,6 +132,17 @@
 				857C0E6D1DDE8AFD002D8C00 /* Info.plist */,
 			);
 			path = MyPlacesUITests;
+			sourceTree = "<group>";
+		};
+		857C0E7D1DDE8EAF002D8C00 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				857C0E7B1DDE8EA4002D8C00 /* NewCollectionViewController.swift */,
+				857C0E7E1DDE915A002D8C00 /* CollectionDetailViewController.swift */,
+				851C5A331DDE954700A1E493 /* SettingsViewController.swift */,
+				851C5A351DDE983800A1E493 /* SearchViewController.swift */,
+			);
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +252,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				857C0E7A1DDE8DB4002D8C00 /* images.xcassets in Resources */,
 				857C0E561DDE8AFD002D8C00 /* LaunchScreen.storyboard in Resources */,
-				857C0E531DDE8AFD002D8C00 /* Assets.xcassets in Resources */,
 				857C0E511DDE8AFD002D8C00 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851C5A361DDE983800A1E493 /* SearchViewController.swift in Sources */,
+				857C0E7C1DDE8EA4002D8C00 /* NewCollectionViewController.swift in Sources */,
+				857C0E7F1DDE915A002D8C00 /* CollectionDetailViewController.swift in Sources */,
 				857C0E4E1DDE8AFD002D8C00 /* ViewController.swift in Sources */,
+				851C5A341DDE954700A1E493 /* SettingsViewController.swift in Sources */,
 				857C0E4C1DDE8AFD002D8C00 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +527,7 @@
 				857C0E721DDE8AFD002D8C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		857C0E731DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "MyPlacesTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +536,7 @@
 				857C0E751DDE8AFD002D8C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		857C0E761DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "MyPlacesUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +545,7 @@
 				857C0E781DDE8AFD002D8C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
