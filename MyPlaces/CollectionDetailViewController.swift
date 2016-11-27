@@ -8,32 +8,45 @@
 
 import UIKit
 
-class CollectionDetailViewController: UIViewController {
-
+class CollectionDetailViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
+                "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
+                "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
+                "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
+                "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        UIApplication.shared.statusBarStyle = .lightContent
+        tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     
     @IBAction func didPressBack(_ sender: Any) {
         navigationController!.popViewController(animated: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "com.noff.PlaceCell", for: indexPath) as! TableViewCell
+        cell.titleLabel.text = data[indexPath.row]
+        
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
 }
