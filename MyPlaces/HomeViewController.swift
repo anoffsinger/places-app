@@ -69,25 +69,24 @@ class CaptionableImageView: UIView {
     }
 }
 
-class HomeViewController: UIViewController, CardComposeViewControllerDelegate {
+class HomeViewController: UIViewController, CardComposeViewControllerDelegate, UITableViewDataSource {
     
     @IBOutlet weak var menuIcon: UIButton!
     @IBOutlet weak var collectionTitle: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var newImage: UIImageView!
+    @IBOutlet weak var collectionTableView: UITableView!
     
-    
-    var imageView: CaptionableImageView!
+    let data = ["Oslo", "Amsterdam", "Bangalore", "Guangzhou"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1000)
-        
+        collectionTableView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func didPressMenuDown(_ sender: Any) {
@@ -101,26 +100,25 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate {
     func didTapSaveCollection(title: String, chosenImage: UIImage) {
         collectionTitle.text = title
         newImage.image = chosenImage
-        
-//        let newCard = CollectionCard()
-//        let bob = CollectionCard(firstName: "Bob", lastName: title)
-//        print(bob.lastName)
-        
-//        imageView = CaptionableImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 30))
-//        imageView.image = UIImage(named: "yodawg")
-//        imageView.caption = title
-//        view.addSubview(imageView)
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "com.noff.CollectionCell", for: indexPath) as! CollectionTableViewCell
+        cell.collectionLabel.text = data[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        
         let currentSegue = segue.identifier
         
         if currentSegue == "ViewComposePageSegue" {
             let newCollectionViewController = segue.destination as! NewCollectionViewController
             newCollectionViewController.delegate = self
         }
-        
     }
-    
 }
