@@ -8,7 +8,7 @@ import UIKit
 
 // create a protocol for what happens when save button is tapped
 protocol CardComposeViewControllerDelegate {
-    func didTapSaveCollection(title: String, chosenImage: UIImage)
+    func didTapSaveCollection(collection: Collection)
 }
 
 class NewCollectionViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -18,6 +18,9 @@ class NewCollectionViewController: UIViewController, UINavigationControllerDeleg
     @IBOutlet weak var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
     var delegate: CardComposeViewControllerDelegate!
+    
+    // State that there may be an instance of a new collection, question mark shows it could be nil
+    var collection: Collection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +34,17 @@ class NewCollectionViewController: UIViewController, UINavigationControllerDeleg
     }
 
     @IBAction func didTapSave(_ sender: Any) {
-        let title = collectionTitleLabel.text
-        let chosenImage = imageView.image
+        let name = collectionTitleLabel.text
+        let photo = imageView.image
+        let numberPlaces = 0
         
-        delegate.didTapSaveCollection(title: title!, chosenImage: chosenImage!)
+        // not sure what exclamations are doing here, need to figure out
+        collection = Collection(name: name!, photo: photo!, numberPlaces: numberPlaces)
+        
+//        let title = collectionTitleLabel.text
+//        let chosenImage = imageView.image
+        
+        delegate.didTapSaveCollection(collection: collection!)
         dismiss(animated: true, completion: nil)
     }
     

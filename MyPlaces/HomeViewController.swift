@@ -27,47 +27,47 @@ import UIKit
 //    }
 //}
 
-class CaptionableImageView: UIView {
-    var label: UILabel!
-    var imageView: UIImageView!
-    
-    var caption: String? {
-        get { return label?.text }
-        set { label.text = newValue }
-    }
-    
-    var image: UIImage? {
-        get { return imageView.image }
-        set { imageView.image = newValue }
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initSubviews()
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initSubviews()
-    }
-    
-    func initSubviews() {
-        // sets the image's frame to fill our view
-        imageView = UIImageView(frame: bounds)
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
-        imageView.clipsToBounds = true
-        addSubview(imageView)
-        
-        // caption has translucent grey background 30 points high and span across bottom of view
-        let captionBackgroundView = UIView(frame: CGRect(x: 0, y: bounds.height - 30, width: bounds.width, height: 30))
-        captionBackgroundView.backgroundColor = UIColor(white: 0.1, alpha: 0.8)
-        addSubview(captionBackgroundView)
-        
-        label = UILabel(frame: CGRect(x: 0, y: bounds.height - 30, width: bounds.width, height: 30))
-        label.textColor = UIColor(white: 0.9, alpha: 1.0)
-        captionBackgroundView.addSubview(label)
-    }
-}
+//class CaptionableImageView: UIView {
+//    var label: UILabel!
+//    var imageView: UIImageView!
+//    
+//    var caption: String? {
+//        get { return label?.text }
+//        set { label.text = newValue }
+//    }
+//    
+//    var image: UIImage? {
+//        get { return imageView.image }
+//        set { imageView.image = newValue }
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        initSubviews()
+//    }
+//    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        initSubviews()
+//    }
+//    
+//    func initSubviews() {
+//        // sets the image's frame to fill our view
+//        imageView = UIImageView(frame: bounds)
+//        imageView.contentMode = UIViewContentMode.scaleAspectFill
+//        imageView.clipsToBounds = true
+//        addSubview(imageView)
+//        
+//        // caption has translucent grey background 30 points high and span across bottom of view
+//        let captionBackgroundView = UIView(frame: CGRect(x: 0, y: bounds.height - 30, width: bounds.width, height: 30))
+//        captionBackgroundView.backgroundColor = UIColor(white: 0.1, alpha: 0.8)
+//        addSubview(captionBackgroundView)
+//        
+//        label = UILabel(frame: CGRect(x: 0, y: bounds.height - 30, width: bounds.width, height: 30))
+//        label.textColor = UIColor(white: 0.9, alpha: 1.0)
+//        captionBackgroundView.addSubview(label)
+//    }
+//}
 
 class HomeViewController: UIViewController, CardComposeViewControllerDelegate, UITableViewDataSource {
     
@@ -77,7 +77,8 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
     @IBOutlet weak var newImage: UIImageView!
     @IBOutlet weak var collectionTableView: UITableView!
     
-    let data = ["Oslo", "Amsterdam", "Bangalore", "Guangzhou"]
+    var collections = [Collection]()
+//    var data = ["Oslo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,19 +98,32 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
         menuIcon.alpha = 1.0
     }
     
-    func didTapSaveCollection(title: String, chosenImage: UIImage) {
-        collectionTitle.text = title
-        newImage.image = chosenImage
+    func didTapSaveCollection(collection: Collection) {
+        
+        let newIndexPath = IndexPath(row: collections.count, section: 0)
+        collections.append(collection)
+        collectionTableView.insertRows(at: [newIndexPath], with: .bottom)
+        
+        print(collection.name)
+//        collectionTitle.text = title
+//        newImage.image = chosenImage
+//        data.append(title)
+//        collectionTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "com.noff.CollectionCell", for: indexPath) as! CollectionTableViewCell
-        cell.collectionLabel.text = data[indexPath.row]
+        cell.collectionLabel.text = collections[indexPath.row].name
+        cell.collectionImageView.image = collections[indexPath.row].photo
+        cell.numberPlacesLabel.text = String(collections[indexPath.row].numberPlaces)
+        
+        // creation of new view/segue most likely needs to happen here
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return collections.count
     }
 
     
