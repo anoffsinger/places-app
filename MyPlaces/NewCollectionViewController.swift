@@ -14,6 +14,7 @@ protocol CardComposeViewControllerDelegate {
 class NewCollectionViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     // variables
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var collectionTitleLabel: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
@@ -26,7 +27,9 @@ class NewCollectionViewController: UIViewController, UINavigationControllerDeleg
         super.viewDidLoad()
         collectionTitleLabel.becomeFirstResponder()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
+        imageView.clipsToBounds = true
+//        saveButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,12 +52,14 @@ class NewCollectionViewController: UIViewController, UINavigationControllerDeleg
     }
     
     @IBAction func didTapAddPhoto(_ sender: Any) {
+//        imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // set chosenImage to photo taken
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
         
         imageView.image = chosenImage
         imagePicker.dismiss(animated: true, completion: nil)

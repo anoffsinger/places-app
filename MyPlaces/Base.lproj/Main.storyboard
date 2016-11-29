@@ -49,13 +49,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m0D-ad-HQf">
-                                        <rect key="frame" x="92" y="19" width="191" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <segue destination="R0Z-Ll-caS" kind="push" id="uc6-JV-5sj"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eUf-wF-glZ">
                                         <rect key="frame" x="24" y="34" width="26" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -77,44 +70,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="5nh-fi-BBt">
-                                <rect key="frame" x="0.0" y="88" width="375" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" id="zdG-e3-R6P" userLabel="Card 1">
-                                        <rect key="frame" x="-20" y="-3" width="415" height="431"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="oslo" id="vP3-Wr-B8Z">
-                                                <rect key="frame" x="20" y="20" width="375" height="391"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="MYA-vn-Hhl">
-                                                <rect key="frame" x="43" y="28" width="331" height="331"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AG5-sM-KFh">
-                                                <rect key="frame" x="66" y="272" width="185" height="67"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="53"/>
-                                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                            </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="392" sectionHeaderHeight="28" sectionFooterHeight="28" id="GK1-lB-E0j">
                                 <rect key="frame" x="0.0" y="88" width="375" height="579"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="com.noff.CollectionCell" rowHeight="392" id="cyX-zh-IQk" customClass="CollectionTableViewCell" customModule="MyPlaces" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="com.noff.CollectionCell" rowHeight="392" id="cyX-zh-IQk" customClass="CollectionTableViewCell" customModule="MyPlaces" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="392"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cyX-zh-IQk" id="APX-Yc-grL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="391"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="392"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" id="3i2-y3-sci" userLabel="Shadow">
@@ -126,7 +91,7 @@
                                                     <rect key="frame" x="22" y="29" width="328" height="328"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="collection-oslo" id="lc1-cW-swC">
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="collection-oslo" id="lc1-cW-swC">
                                                             <rect key="frame" x="0.0" y="0.0" width="328" height="328"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </imageView>
@@ -165,6 +130,7 @@
                                             <outlet property="collectionImageView" destination="lc1-cW-swC" id="Sfb-67-yPp"/>
                                             <outlet property="collectionLabel" destination="ndw-d0-r99" id="LZt-za-koW"/>
                                             <outlet property="numberPlacesLabel" destination="R6m-af-wSJ" id="tZc-aK-IEV"/>
+                                            <segue destination="R0Z-Ll-caS" kind="push" identifier="ViewCollectionDetailSegue" id="4m0-Zd-kTS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -175,10 +141,7 @@
                     <navigationItem key="navigationItem" id="gMV-15-Gt8"/>
                     <connections>
                         <outlet property="collectionTableView" destination="GK1-lB-E0j" id="Xph-Vv-GHM"/>
-                        <outlet property="collectionTitle" destination="AG5-sM-KFh" id="s0m-ao-7pb"/>
                         <outlet property="menuIcon" destination="eUf-wF-glZ" id="w8Q-an-FX6"/>
-                        <outlet property="newImage" destination="MYA-vn-Hhl" id="two-2b-dIR"/>
-                        <outlet property="scrollView" destination="5nh-fi-BBt" id="8gD-F9-VY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -223,6 +186,9 @@
                                 <state key="normal" title="Save Collection">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.14950770547945205" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapSave:" destination="nhm-Ok-bXE" eventType="touchUpInside" id="7UA-ct-2tb"/>
                                 </connections>
@@ -246,7 +212,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="3Nv-dN-NAJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="3Nv-dN-NAJ">
                                 <rect key="frame" x="23" y="102" width="169" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -256,6 +222,7 @@
                     <connections>
                         <outlet property="collectionTitleLabel" destination="Xjk-QX-6xa" id="84X-cj-JV5"/>
                         <outlet property="imageView" destination="3Nv-dN-NAJ" id="vYd-Mv-32p"/>
+                        <outlet property="saveButton" destination="66C-6X-VKw" id="qxH-hX-d0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSK-kE-KPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -270,7 +237,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="collection-oslo" id="gqY-fM-eAz">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="collection-oslo" id="gqY-fM-eAz">
                                 <rect key="frame" x="0.0" y="-199" width="375" height="375"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
@@ -309,7 +276,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gPL-y5-Oci" id="OIh-fl-GFM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uSv-Od-dVW" userLabel="Title Label">
@@ -361,7 +328,8 @@
                     <navigationItem key="navigationItem" id="c0z-sZ-SLt"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="headerImageView" destination="gqY-fM-eAz" id="NtY-Ym-GLO"/>
+                        <outlet property="collectionImageView" destination="gqY-fM-eAz" id="jJh-mf-D78"/>
+                        <outlet property="collectionLabelView" destination="Dxv-1U-jJ3" id="m3H-PB-M15"/>
                         <outlet property="tableView" destination="aYo-TB-1PQ" id="kB3-G4-O8R"/>
                     </connections>
                 </viewController>
@@ -425,7 +393,6 @@
         <image name="header-gradient" width="375" height="112"/>
         <image name="more" width="40" height="40"/>
         <image name="navigation" width="375" height="667"/>
-        <image name="oslo" width="375" height="391"/>
         <image name="search place" width="375" height="667"/>
         <image name="tag" width="20" height="20"/>
     </resources>

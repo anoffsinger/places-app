@@ -10,14 +10,22 @@ import UIKit
 
 class CollectionDetailViewController: UIViewController, UITableViewDataSource {
     
-    @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
+
     
-    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
-                "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
-                "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
-                "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
-                "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
+    @IBOutlet weak var collectionImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionLabelView: UILabel!
+    
+    var collection: Collection!
+    var collectionTitle: String? = nil
+    var collectionImage: UIImage? = nil
+    
+    let data = ["Starbelly"]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionLabelView.text = collection.name
+        collectionImageView.image = collection.photo
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
