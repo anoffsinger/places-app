@@ -52,7 +52,6 @@ class NewCollectionViewController: UIViewController, UINavigationControllerDeleg
     }
     
     @IBAction func didTapAddPhoto(_ sender: Any) {
-//        imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
     
