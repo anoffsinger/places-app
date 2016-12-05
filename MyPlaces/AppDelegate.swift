@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "nomadApp"
+                configuration.clientKey = "f>tCw9UVABnyPUfmqdvRNNNi"
+                configuration.server = "https://immense-dawn-33349.herokuapp.com/parse"
+            })
+        )
+        
+        if PFUser.current() != nil {
+            let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewControllerNavigation") as UIViewController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
 

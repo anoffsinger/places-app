@@ -12,17 +12,13 @@ class Collection {
     
     // initialize stored properties, with question mark indicating optional values
     var name: String
-    var photo: UIImage
+    // questionmark defines as optional
+    var photo: UIImage?
     var numberPlaces: Int
     
-    init?(name: String, photo: UIImage, numberPlaces: Int) {
+    init?(name: String, photo: UIImage?, numberPlaces: Int) {
         self.name = name
         self.photo = photo
         self.numberPlaces = numberPlaces
-        
-        // failure if no name value
-        if name.isEmpty {
-            return nil
-        }
     }
 }

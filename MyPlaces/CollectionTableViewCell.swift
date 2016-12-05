@@ -39,7 +39,11 @@ class CollectionTableViewCell: UITableViewCell {
         backgroundShadowView.layer.shadowOffset = CGSize(width: 0, height: 10)
         backgroundShadowView.layer.shadowOpacity = 0.07
         backgroundShadowView.layer.shadowRadius = 10
+        
+        collectionImageView.alpha = 0.7
     }
+    
+    
     
     
 

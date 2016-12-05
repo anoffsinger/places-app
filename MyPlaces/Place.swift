@@ -12,19 +12,14 @@ class Place {
     
     // initialize stored properties, with question mark indicating optional values
     var name: String
-    var photo: UIImage
-    var tags: Array<Any>
-    var address: String
+    var photo: UIImage?
+    var tags: String
+    var description: String
     
-    init?(name: String, photo: UIImage, tags: Array<Any>, address: String) {
+    init?(name: String, photo: UIImage?, tags: String, description: String) {
         self.name = name
         self.photo = photo
         self.tags = tags
-        self.address = address
-        
-        // failure if no name value
-        if name.isEmpty {
-            return nil
-        }
+        self.description = description
     }
 }

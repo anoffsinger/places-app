@@ -5,6 +5,7 @@
 //  Copyright © 2016 Adam Noffsinger. All rights reserved.
 
 import UIKit
+import Parse
 
 class HomeViewController: UIViewController, CardComposeViewControllerDelegate, UITableViewDataSource {
     
@@ -38,9 +39,12 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "com.noff.CollectionCell", for: indexPath) as! CollectionTableViewCell
+        let greyscaleImage = convertToGrayScale(image: collections[indexPath.row].photo!)
+        cell.collectionImageView.image = greyscaleImage
         
         cell.collectionLabel.text = collections[indexPath.row].name
-        cell.collectionImageView.image = collections[indexPath.row].photo
+        
+//        cell.collectionImageView.image = collections[indexPath.row].photo!
         cell.numberPlacesLabel.text = String(collections[indexPath.row].numberPlaces)
         
         return cell
@@ -51,11 +55,15 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        
         let currentSegue = segue.identifier
         let collectionDetailViewController: CollectionDetailViewController!
+        
         if currentSegue == "ViewComposePageSegue" {
+            
             let newCollectionViewController = segue.destination as! NewCollectionViewController
             newCollectionViewController.delegate = self
+        
         } else if currentSegue == "ViewCollectionDetailSegue"{
             
             collectionDetailViewController = segue.destination as! CollectionDetailViewController
@@ -66,5 +74,26 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
                 collectionDetailViewController.collection = selectedCollection
             }
         }
+    }
+    
+    func convertToGrayScale(image: UIImage) -> UIImage {
+        
+        // creates image rectangle
+        let imageRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        
+        // creates device dependent greyscale colorspace
+        let colorSpace = CGColorSpaceCreateDeviceGray()
+        
+        // gets sizes of original image
+        let width = image.size.width
+        let height = image.size.height
+        
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
+        let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+        context?.draw(image.cgImage!, in: imageRect)
+        let imageRef = context!.makeImage()
+        let newImage = UIImage(cgImage: imageRef!)
+        
+        return newImage
     }
 }
