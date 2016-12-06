@@ -17,7 +17,7 @@
                BlueprintIdentifier = "857C0E471DDE8AFC002D8C00"
                BuildableName = "MyPlaces.app"
                BlueprintName = "MyPlaces"
-               ReferencedContainer = "container:MyPlaces.xcodeproj">
+               ReferencedContainer = "container:Nomad.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "857C0E5B1DDE8AFD002D8C00"
                BuildableName = "MyPlacesTests.xctest"
                BlueprintName = "MyPlacesTests"
-               ReferencedContainer = "container:MyPlaces.xcodeproj">
+               ReferencedContainer = "container:Nomad.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "857C0E661DDE8AFD002D8C00"
                BuildableName = "MyPlacesUITests.xctest"
                BlueprintName = "MyPlacesUITests"
-               ReferencedContainer = "container:MyPlaces.xcodeproj">
+               ReferencedContainer = "container:Nomad.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "857C0E471DDE8AFC002D8C00"
             BuildableName = "MyPlaces.app"
             BlueprintName = "MyPlaces"
-            ReferencedContainer = "container:MyPlaces.xcodeproj">
+            ReferencedContainer = "container:Nomad.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "857C0E471DDE8AFC002D8C00"
             BuildableName = "MyPlaces.app"
             BlueprintName = "MyPlaces"
-            ReferencedContainer = "container:MyPlaces.xcodeproj">
+            ReferencedContainer = "container:Nomad.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "857C0E471DDE8AFC002D8C00"
             BuildableName = "MyPlaces.app"
             BlueprintName = "MyPlaces"
-            ReferencedContainer = "container:MyPlaces.xcodeproj">
+            ReferencedContainer = "container:Nomad.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -7,7 +7,7 @@
 import UIKit
 import Parse
 
-class HomeViewController: UIViewController, CardComposeViewControllerDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, CardComposeViewControllerDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     @IBOutlet weak var menuIcon: UIButton!
     @IBOutlet weak var collectionTableView: UITableView!
@@ -17,6 +17,8 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionTableView.dataSource = self
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,7 +47,12 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
         cell.collectionLabel.text = collections[indexPath.row].name
         
 //        cell.collectionImageView.image = collections[indexPath.row].photo!
-        cell.numberPlacesLabel.text = String(collections[indexPath.row].numberPlaces)
+        if collections[indexPath.row].numberPlaces == 0 {
+            cell.numberPlacesLabel.text = "No places added yet"
+        } else {
+            cell.numberPlacesLabel.text = "\(collections[indexPath.row].numberPlaces) places"
+        }
+        
         
         return cell
     }
@@ -76,8 +83,15 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
         }
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("scrolling")
+    }
+    
+    // cifilter? or gpuimage library
+    
     func convertToGrayScale(image: UIImage) -> UIImage {
         
+        print(image.imageOrientation.rawValue)
         // creates image rectangle
         let imageRect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         
@@ -92,7 +106,7 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
         let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
         context?.draw(image.cgImage!, in: imageRect)
         let imageRef = context!.makeImage()
-        let newImage = UIImage(cgImage: imageRef!)
+        let newImage = UIImage(cgImage: imageRef!, scale: image.scale, orientation: image.imageOrientation)
         
         return newImage
     }

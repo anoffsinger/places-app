@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07DE81EF24C185AC04527514 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B43CE13D3AA0A58CEB0B9E /* Pods_MyPlaces.framework */; };
 		6006CED48628470CEC3944C1 /* Pods_MyPlacesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55FB29BFEEE8013F3A6E801 /* Pods_MyPlacesUITests.framework */; };
+		850980211DF66948005F81EC /* StandardUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850980201DF66948005F81EC /* StandardUILabel.swift */; };
 		85195F7B1DE3F20400A02E3E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85195F7A1DE3F20400A02E3E /* HomeViewController.swift */; };
 		851C5A341DDE954700A1E493 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C5A331DDE954700A1E493 /* SettingsViewController.swift */; };
 		851C5A361DDE983800A1E493 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C5A351DDE983800A1E493 /* SearchViewController.swift */; };
@@ -17,6 +18,7 @@
 		8540C8EA1DEB9E90006C31B5 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540C8E91DEB9E90006C31B5 /* CollectionTableViewCell.swift */; };
 		8540C8EC1DEC11EE006C31B5 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540C8EB1DEC11EE006C31B5 /* Collection.swift */; };
 		8540C8ED1DEC11EE006C31B5 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8540C8EB1DEC11EE006C31B5 /* Collection.swift */; };
+		8553AE401DF6810700706CC6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8553AE3F1DF6810700706CC6 /* Common.swift */; };
 		8572C0D71DF37CEE00E83A1D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8572C0D61DF37CEE00E83A1D /* MapKit.framework */; };
 		8572C0D91DF3809B00E83A1D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8572C0D81DF3809B00E83A1D /* CoreLocation.framework */; };
 		857C0E4C1DDE8AFD002D8C00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E4B1DDE8AFD002D8C00 /* AppDelegate.swift */; };
@@ -55,6 +57,7 @@
 		3B9F4A28B0DA7957A235B4D4 /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		49B327100698099A7398A578 /* Pods_MyPlacesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlacesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA5C65F1C2C478C72C4D40D /* Pods-MyPlacesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlacesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlacesTests/Pods-MyPlacesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		850980201DF66948005F81EC /* StandardUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardUILabel.swift; sourceTree = "<group>"; };
 		85195F7A1DE3F20400A02E3E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		851C5A331DDE954700A1E493 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		851C5A351DDE983800A1E493 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		8540C8E71DEA6565006C31B5 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8540C8E91DEB9E90006C31B5 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		8540C8EB1DEC11EE006C31B5 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		8553AE3F1DF6810700706CC6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		8572C0D61DF37CEE00E83A1D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8572C0D81DF3809B00E83A1D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		857C0E481DDE8AFD002D8C00 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +223,8 @@
 				8540C8E91DEB9E90006C31B5 /* CollectionTableViewCell.swift */,
 				85D426B41DEFE8960004331A /* AddPlaceViewController.swift */,
 				8531351B1DF4C4C100AFC12E /* LoginViewController.swift */,
+				850980201DF66948005F81EC /* StandardUILabel.swift */,
+				8553AE3F1DF6810700706CC6 /* Common.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -315,7 +321,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 857C0E431DDE8AFC002D8C00 /* Build configuration list for PBXProject "MyPlaces" */;
+			buildConfigurationList = 857C0E431DDE8AFC002D8C00 /* Build configuration list for PBXProject "Nomad" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -514,9 +520,11 @@
 				851C5A341DDE954700A1E493 /* SettingsViewController.swift in Sources */,
 				857C0E4C1DDE8AFD002D8C00 /* AppDelegate.swift in Sources */,
 				8540C8E81DEA6565006C31B5 /* TableViewCell.swift in Sources */,
+				850980211DF66948005F81EC /* StandardUILabel.swift in Sources */,
 				85195F7B1DE3F20400A02E3E /* HomeViewController.swift in Sources */,
 				8540C8EA1DEB9E90006C31B5 /* CollectionTableViewCell.swift in Sources */,
 				8531351C1DF4C4C100AFC12E /* LoginViewController.swift in Sources */,
+				8553AE401DF6810700706CC6 /* Common.swift in Sources */,
 				85D426B11DEFE16F0004331A /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,7 +761,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		857C0E431DDE8AFC002D8C00 /* Build configuration list for PBXProject "MyPlaces" */ = {
+		857C0E431DDE8AFC002D8C00 /* Build configuration list for PBXProject "Nomad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				857C0E6E1DDE8AFD002D8C00 /* Debug */,

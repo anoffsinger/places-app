@@ -30,7 +30,6 @@ class CollectionTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
     
-//        backgroundCardView.backgroundColor = UIColor.gray
         contentView.backgroundColor = UIColor.white
         backgroundCardView.layer.cornerRadius = 4.0
         backgroundCardView.layer.masksToBounds = true

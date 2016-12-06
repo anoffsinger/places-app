@@ -8,11 +8,14 @@
 
 import UIKit
 
-class CollectionDetailViewController: UIViewController, UITableViewDataSource, PlaceComposeViewControllerDelegate {
+class CollectionDetailViewController: UIViewController, UITableViewDataSource, PlaceComposeViewControllerDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var collectionImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionLabelView: UILabel!
+    @IBOutlet weak var addPlaceButton: UIButton!
+    
+    @IBOutlet weak var buttonShadowView: UIView!
     
     var collection: Collection!
     var collectionTitle: String? = nil
@@ -23,12 +26,19 @@ class CollectionDetailViewController: UIViewController, UITableViewDataSource, P
     override func viewWillAppear(_ animated: Bool) {
         collectionLabelView.text = collection.name
         collectionImageView.image = collection.photo
+        
+        buttonShadowView.layer.cornerRadius = 0.5 * buttonShadowView.bounds.size.width
+        buttonShadowView.layer.shadowColor = UIColor.black.cgColor
+        buttonShadowView.layer.shadowOffset = CGSize(width: 0, height: 10)
+        buttonShadowView.layer.shadowOpacity = 0.07
+        buttonShadowView.layer.shadowRadius = 10
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.statusBarStyle = .lightContent
         tableView.dataSource = self
+        addPlaceButton.layer.cornerRadius = 0.5 * addPlaceButton.bounds.size.width
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +58,7 @@ class CollectionDetailViewController: UIViewController, UITableViewDataSource, P
         let cell = tableView.dequeueReusableCell(withIdentifier: "com.noff.PlaceCell", for: indexPath) as! TableViewCell
         cell.titleLabel.text = places[indexPath.row].name
         cell.tagsLabel.text = places[indexPath.row].tags
+        cell.accessoryType = UITableViewCellAccessoryType.none
         
         return cell
     }
@@ -61,6 +72,8 @@ class CollectionDetailViewController: UIViewController, UITableViewDataSource, P
         places.append(place)
         tableView.insertRows(at: [newIndexPath], with: .bottom)
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

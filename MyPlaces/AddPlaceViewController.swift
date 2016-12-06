@@ -17,7 +17,8 @@ class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate,
 //    let imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placeTitleField: UITextField!
-    @IBOutlet weak var placeDescriptionField: UITextField!
+    
+    @IBOutlet weak var placeDescriptionField: UITextView!
     @IBOutlet weak var placeTagsField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapView: MKMapView!
@@ -29,6 +30,7 @@ class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 4.0
         
         let contentWidth = scrollView.bounds.width
         let contentHeight = scrollView.bounds.height * 3

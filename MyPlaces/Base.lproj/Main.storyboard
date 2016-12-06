@@ -186,7 +186,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="66C-6X-VKw">
                                 <rect key="frame" x="0.0" y="392" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.38039215686274508" green="0.7803921568627451" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.69411764705882351" green="0.54117647058823526" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="Save Collection">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -213,13 +213,13 @@
                                     <action selector="didTapAddPhoto:" destination="nhm-Ok-bXE" eventType="touchUpInside" id="fgz-bm-fGT"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose a title" minimumFontSize="17" id="Xjk-QX-6xa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Choose a title" minimumFontSize="17" id="Xjk-QX-6xa" customClass="StandardTextField" customModule="MyPlaces" customModuleProvider="target">
                                 <rect key="frame" x="23" y="294" width="328" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -317,24 +317,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5ob-Zr-dMa">
-                                <rect key="frame" x="0.0" y="609" width="375" height="58"/>
+                            <view contentMode="scaleToFill" misplaced="YES" id="tVv-bC-QIa">
+                                <rect key="frame" x="258" y="550" width="72" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.38039215686274508" green="0.7803921568627451" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <state key="normal" title="Add Place">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="FFX-Hq-IyZ" kind="modal" identifier="AddPlaceSegue" id="Zdx-M5-PrH"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5ob-Zr-dMa">
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.69411764705882351" green="0.54117647058823526" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" backgroundImage="add (white)">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="FFX-Hq-IyZ" kind="modal" identifier="AddPlaceSegue" id="Zdx-M5-PrH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="c0z-sZ-SLt"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="addPlaceButton" destination="5ob-Zr-dMa" id="0c9-RU-AwN"/>
+                        <outlet property="buttonShadowView" destination="tVv-bC-QIa" id="rdt-8w-bcI"/>
                         <outlet property="collectionImageView" destination="gqY-fM-eAz" id="jJh-mf-D78"/>
                         <outlet property="collectionLabelView" destination="Dxv-1U-jJ3" id="m3H-PB-M15"/>
                         <outlet property="tableView" destination="aYo-TB-1PQ" id="kB3-G4-O8R"/>
@@ -448,35 +457,31 @@
                                             <action selector="didPushClose:" destination="FFX-Hq-IyZ" eventType="touchUpInside" id="72B-gx-rHt"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" id="P0S-Ng-TrA">
-                                        <rect key="frame" x="52" y="73" width="277" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="P0S-Ng-TrA" customClass="StandardTextField" customModule="MyPlaces" customModuleProvider="target">
+                                        <rect key="frame" x="169" y="79" width="179" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.9000634517766497" green="0.9000634517766497" blue="0.9000634517766497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" id="e64-3n-T5G">
-                                        <rect key="frame" x="52" y="125" width="277" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="fCr-L9-jpD">
-                                        <rect key="frame" x="52" y="198" width="118" height="111"/>
+                                        <rect key="frame" x="26" y="78" width="120" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dRw-mF-1qB">
-                                        <rect key="frame" x="224" y="238" width="86" height="30"/>
+                                        <rect key="frame" x="66" y="118" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Add photo"/>
+                                        <state key="normal" backgroundImage="camera"/>
                                         <connections>
                                             <action selector="didTapAddPhoto:" destination="FFX-Hq-IyZ" eventType="touchUpInside" id="77P-SC-Y8p"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags" textAlignment="natural" minimumFontSize="17" id="VCC-9h-5KY">
-                                        <rect key="frame" x="52" y="352" width="260" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tags" textAlignment="natural" minimumFontSize="17" id="VCC-9h-5KY" customClass="StandardTextField" customModule="MyPlaces" customModuleProvider="target">
+                                        <rect key="frame" x="169" y="150" width="179" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.8818805520304569" green="0.8818805520304569" blue="0.8818805520304569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -489,8 +494,17 @@
                                             <action selector="didTapSave:" destination="FFX-Hq-IyZ" eventType="touchUpInside" id="9Bd-ai-Y7q"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="2N6-Aj-yEI">
+                                        <rect key="frame" x="26" y="228" width="328" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" id="ipk-o3-HOO">
-                                        <rect key="frame" x="0.0" y="419" width="375" height="267"/>
+                                        <rect key="frame" x="3" y="401" width="375" height="267"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </mapView>
                                 </subviews>
@@ -518,7 +532,7 @@
                     <connections>
                         <outlet property="imageView" destination="fCr-L9-jpD" id="BrO-a8-SeJ"/>
                         <outlet property="mapView" destination="ipk-o3-HOO" id="jGO-RW-Bvn"/>
-                        <outlet property="placeDescriptionField" destination="e64-3n-T5G" id="IsV-Cj-Znc"/>
+                        <outlet property="placeDescriptionField" destination="2N6-Aj-yEI" id="5Tz-DB-gKb"/>
                         <outlet property="placeTagsField" destination="VCC-9h-5KY" id="nY5-IL-GzF"/>
                         <outlet property="placeTitleField" destination="P0S-Ng-TrA" id="NC4-0R-cQP"/>
                         <outlet property="scrollView" destination="zev-XD-dVv" id="rFv-UP-Kh3"/>
@@ -601,6 +615,7 @@
     <resources>
         <image name=" menu" width="24" height="18"/>
         <image name="add (color)" width="40" height="40"/>
+        <image name="add (white)" width="72" height="72"/>
         <image name="back (white)" width="40" height="40"/>
         <image name="camera" width="40" height="40"/>
         <image name="close" width="40" height="40"/>
