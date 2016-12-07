@@ -7,7 +7,7 @@
 import UIKit
 import Parse
 
-class HomeViewController: UIViewController, CardComposeViewControllerDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class HomeViewController: UIViewController, CardComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var menuIcon: UIButton!
     @IBOutlet weak var collectionTableView: UITableView!
@@ -17,8 +17,7 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionTableView.dataSource = self
-        
-        
+        collectionTableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {

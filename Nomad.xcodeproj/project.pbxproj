@@ -29,6 +29,7 @@
 		857C0E7A1DDE8DB4002D8C00 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857C0E791DDE8DB4002D8C00 /* images.xcassets */; };
 		857C0E7C1DDE8EA4002D8C00 /* NewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E7B1DDE8EA4002D8C00 /* NewCollectionViewController.swift */; };
 		857C0E7F1DDE915A002D8C00 /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857C0E7E1DDE915A002D8C00 /* CollectionDetailViewController.swift */; };
+		858A2F971DF7C049000B66B6 /* StandardUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A2F961DF7C049000B66B6 /* StandardUITextView.swift */; };
 		85D426B11DEFE16F0004331A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D426B01DEFE16F0004331A /* Place.swift */; };
 		85D426B31DEFE3E50004331A /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D426B21DEFE3E50004331A /* PlaceViewController.swift */; };
 		85D426B51DEFE8960004331A /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D426B41DEFE8960004331A /* AddPlaceViewController.swift */; };
@@ -68,20 +69,21 @@
 		8553AE3F1DF6810700706CC6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		8572C0D61DF37CEE00E83A1D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8572C0D81DF3809B00E83A1D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		857C0E481DDE8AFD002D8C00 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		857C0E481DDE8AFD002D8C00 /* Nomad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nomad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		857C0E4B1DDE8AFD002D8C00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		857C0E501DDE8AFD002D8C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		857C0E551DDE8AFD002D8C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		857C0E571DDE8AFD002D8C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		857C0E5C1DDE8AFD002D8C00 /* MyPlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		857C0E5C1DDE8AFD002D8C00 /* NomadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NomadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		857C0E601DDE8AFD002D8C00 /* MyPlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesTests.swift; sourceTree = "<group>"; };
 		857C0E621DDE8AFD002D8C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		857C0E671DDE8AFD002D8C00 /* MyPlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		857C0E671DDE8AFD002D8C00 /* NomadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NomadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		857C0E6B1DDE8AFD002D8C00 /* MyPlacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesUITests.swift; sourceTree = "<group>"; };
 		857C0E6D1DDE8AFD002D8C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		857C0E791DDE8DB4002D8C00 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		857C0E7B1DDE8EA4002D8C00 /* NewCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCollectionViewController.swift; sourceTree = "<group>"; };
 		857C0E7E1DDE915A002D8C00 /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
+		858A2F961DF7C049000B66B6 /* StandardUITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardUITextView.swift; sourceTree = "<group>"; };
 		85B43CE13D3AA0A58CEB0B9E /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D426B01DEFE16F0004331A /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		85D426B21DEFE3E50004331A /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
@@ -171,9 +173,9 @@
 		857C0E491DDE8AFD002D8C00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				857C0E481DDE8AFD002D8C00 /* MyPlaces.app */,
-				857C0E5C1DDE8AFD002D8C00 /* MyPlacesTests.xctest */,
-				857C0E671DDE8AFD002D8C00 /* MyPlacesUITests.xctest */,
+				857C0E481DDE8AFD002D8C00 /* Nomad.app */,
+				857C0E5C1DDE8AFD002D8C00 /* NomadTests.xctest */,
+				857C0E671DDE8AFD002D8C00 /* NomadUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +227,7 @@
 				8531351B1DF4C4C100AFC12E /* LoginViewController.swift */,
 				850980201DF66948005F81EC /* StandardUILabel.swift */,
 				8553AE3F1DF6810700706CC6 /* Common.swift */,
+				858A2F961DF7C049000B66B6 /* StandardUITextView.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -232,9 +235,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		857C0E471DDE8AFC002D8C00 /* MyPlaces */ = {
+		857C0E471DDE8AFC002D8C00 /* Nomad */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 857C0E701DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "MyPlaces" */;
+			buildConfigurationList = 857C0E701DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "Nomad" */;
 			buildPhases = (
 				5C64EB7B810F4BF45C86585A /* [CP] Check Pods Manifest.lock */,
 				857C0E441DDE8AFC002D8C00 /* Sources */,
@@ -247,14 +250,14 @@
 			);
 			dependencies = (
 			);
-			name = MyPlaces;
+			name = Nomad;
 			productName = MyPlaces;
-			productReference = 857C0E481DDE8AFD002D8C00 /* MyPlaces.app */;
+			productReference = 857C0E481DDE8AFD002D8C00 /* Nomad.app */;
 			productType = "com.apple.product-type.application";
 		};
-		857C0E5B1DDE8AFD002D8C00 /* MyPlacesTests */ = {
+		857C0E5B1DDE8AFD002D8C00 /* NomadTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 857C0E731DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "MyPlacesTests" */;
+			buildConfigurationList = 857C0E731DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "NomadTests" */;
 			buildPhases = (
 				B1FEB3F117A18BFB9D3D631F /* [CP] Check Pods Manifest.lock */,
 				857C0E581DDE8AFD002D8C00 /* Sources */,
@@ -268,14 +271,14 @@
 			dependencies = (
 				857C0E5E1DDE8AFD002D8C00 /* PBXTargetDependency */,
 			);
-			name = MyPlacesTests;
+			name = NomadTests;
 			productName = MyPlacesTests;
-			productReference = 857C0E5C1DDE8AFD002D8C00 /* MyPlacesTests.xctest */;
+			productReference = 857C0E5C1DDE8AFD002D8C00 /* NomadTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		857C0E661DDE8AFD002D8C00 /* MyPlacesUITests */ = {
+		857C0E661DDE8AFD002D8C00 /* NomadUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 857C0E761DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "MyPlacesUITests" */;
+			buildConfigurationList = 857C0E761DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "NomadUITests" */;
 			buildPhases = (
 				73320EBCF20116C76DEA25F4 /* [CP] Check Pods Manifest.lock */,
 				857C0E631DDE8AFD002D8C00 /* Sources */,
@@ -289,9 +292,9 @@
 			dependencies = (
 				857C0E691DDE8AFD002D8C00 /* PBXTargetDependency */,
 			);
-			name = MyPlacesUITests;
+			name = NomadUITests;
 			productName = MyPlacesUITests;
-			productReference = 857C0E671DDE8AFD002D8C00 /* MyPlacesUITests.xctest */;
+			productReference = 857C0E671DDE8AFD002D8C00 /* NomadUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -334,9 +337,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				857C0E471DDE8AFC002D8C00 /* MyPlaces */,
-				857C0E5B1DDE8AFD002D8C00 /* MyPlacesTests */,
-				857C0E661DDE8AFD002D8C00 /* MyPlacesUITests */,
+				857C0E471DDE8AFC002D8C00 /* Nomad */,
+				857C0E5B1DDE8AFD002D8C00 /* NomadTests */,
+				857C0E661DDE8AFD002D8C00 /* NomadUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -513,6 +516,7 @@
 			files = (
 				85D426B51DEFE8960004331A /* AddPlaceViewController.swift in Sources */,
 				85D426B31DEFE3E50004331A /* PlaceViewController.swift in Sources */,
+				858A2F971DF7C049000B66B6 /* StandardUITextView.swift in Sources */,
 				8540C8EC1DEC11EE006C31B5 /* Collection.swift in Sources */,
 				851C5A361DDE983800A1E493 /* SearchViewController.swift in Sources */,
 				857C0E7C1DDE8EA4002D8C00 /* NewCollectionViewController.swift in Sources */,
@@ -551,12 +555,12 @@
 /* Begin PBXTargetDependency section */
 		857C0E5E1DDE8AFD002D8C00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 857C0E471DDE8AFC002D8C00 /* MyPlaces */;
+			target = 857C0E471DDE8AFC002D8C00 /* Nomad */;
 			targetProxy = 857C0E5D1DDE8AFD002D8C00 /* PBXContainerItemProxy */;
 		};
 		857C0E691DDE8AFD002D8C00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 857C0E471DDE8AFC002D8C00 /* MyPlaces */;
+			target = 857C0E471DDE8AFC002D8C00 /* Nomad */;
 			targetProxy = 857C0E681DDE8AFD002D8C00 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -711,7 +715,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.noff.MyPlacesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPlaces.app/MyPlaces";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nomad.app/Nomad";
 			};
 			name = Debug;
 		};
@@ -726,7 +730,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.noff.MyPlacesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPlaces.app/MyPlaces";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nomad.app/Nomad";
 			};
 			name = Release;
 		};
@@ -770,7 +774,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		857C0E701DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "MyPlaces" */ = {
+		857C0E701DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "Nomad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				857C0E711DDE8AFD002D8C00 /* Debug */,
@@ -779,7 +783,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		857C0E731DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "MyPlacesTests" */ = {
+		857C0E731DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "NomadTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				857C0E741DDE8AFD002D8C00 /* Debug */,
@@ -788,7 +792,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		857C0E761DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "MyPlacesUITests" */ = {
+		857C0E761DDE8AFD002D8C00 /* Build configuration list for PBXNativeTarget "NomadUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				857C0E771DDE8AFD002D8C00 /* Debug */,

@@ -93,6 +93,7 @@ class CollectionDetailViewController: UIViewController, UITableViewDataSource, P
                 let indexPath = tableView.indexPath(for: selectedPlaceTableViewCell)!
                 let selectedPlace = places[indexPath.row]
                 placeViewController.place = selectedPlace
+                tableView.deselectRow(at: indexPath, animated: true)
             }
         }
     }

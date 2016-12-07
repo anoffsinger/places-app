@@ -12,29 +12,28 @@ protocol PlaceComposeViewControllerDelegate {
     func didTapSavePlace(place: Place)
 }
 
-class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITextViewDelegate {
 
-//    let imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placeTitleField: UITextField!
-    
     @IBOutlet weak var placeDescriptionField: UITextView!
     @IBOutlet weak var placeTagsField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapView: MKMapView!
+
     var coordinates : CLLocationCoordinate2D!
     var locationManager : CLLocationManager!
     var delegate: PlaceComposeViewControllerDelegate!
     var place: Place?
+    
+    let mediumGrey = UIColor(red:0.75, green:0.75, blue:0.75, alpha:1.0)
+    let charcoal = UIColor(red:0.27, green:0.27, blue:0.27, alpha:1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 4.0
         
-        let contentWidth = scrollView.bounds.width
-        let contentHeight = scrollView.bounds.height * 3
-        scrollView.contentSize = CGSize(width: contentWidth, height: contentHeight)
         mapView.delegate = self
         
         locationManager = CLLocationManager()
@@ -42,16 +41,34 @@ class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate,
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.distanceFilter = 200
         locationManager.requestWhenInUseAuthorization()
+        
+        placeDescriptionField.delegate = self
+        placeDescriptionField.textColor = mediumGrey
+        placeDescriptionField.text = "Add a description"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if placeDescriptionField.textColor == mediumGrey {
+            placeDescriptionField.text = nil
+            placeDescriptionField.textColor = charcoal
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if placeDescriptionField.text.isEmpty {
+            placeDescriptionField.text = "Add a description"
+            placeDescriptionField.textColor = mediumGrey
+        }
+    }
+    
     @IBAction func didTapAddPhoto(_ sender: Any) {
         showActionSheet()
     }
+    
     @IBAction func didTapSave(_ sender: Any) {
         let name = placeTitleField.text
         let photo = imageView.image

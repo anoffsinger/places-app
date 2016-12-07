@@ -16,6 +16,7 @@ class Place {
     var tags: String
     var description: String
     
+    
     init?(name: String, photo: UIImage?, tags: String, description: String) {
         self.name = name
         self.photo = photo
