@@ -15,12 +15,15 @@ class Place {
     var photo: UIImage?
     var tags: String
     var description: String
+    var latitude: Double
+    var longitude: Double
     
-    
-    init?(name: String, photo: UIImage?, tags: String, description: String) {
+    init?(name: String, photo: UIImage?, tags: String, description: String, latitude: Double, longitude: Double) {
         self.name = name
         self.photo = photo
         self.tags = tags
         self.description = description
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }

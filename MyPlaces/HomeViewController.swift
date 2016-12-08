@@ -11,6 +11,7 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
     
     @IBOutlet weak var menuIcon: UIButton!
     @IBOutlet weak var collectionTableView: UITableView!
+    @IBOutlet weak var emptyStateView: UIView!
     
     var collections = [Collection]()
     
@@ -18,6 +19,11 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
         super.viewDidLoad()
         collectionTableView.dataSource = self
         collectionTableView.delegate = self
+        if collections.count == 0 {
+            emptyStateView.alpha = 1
+        } else {
+            emptyStateView.alpha = 0
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,6 +42,12 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
         let newIndexPath = IndexPath(row: collections.count, section: 0)
         collections.append(collection)
         collectionTableView.insertRows(at: [newIndexPath], with: .bottom)
+        
+        if collections.count == 0 {
+            emptyStateView.alpha = 1
+        } else {
+            emptyStateView.alpha = 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,7 +59,7 @@ class HomeViewController: UIViewController, CardComposeViewControllerDelegate, U
         
 //        cell.collectionImageView.image = collections[indexPath.row].photo!
         if collections[indexPath.row].numberPlaces == 0 {
-            cell.numberPlacesLabel.text = "No places added yet"
+            cell.numberPlacesLabel.text = "Tap to add a place"
         } else {
             cell.numberPlacesLabel.text = "\(collections[indexPath.row].numberPlaces) places"
         }

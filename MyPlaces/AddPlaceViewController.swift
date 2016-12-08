@@ -74,9 +74,13 @@ class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate,
         let photo = imageView.image
         let description = placeDescriptionField.text
         let tags = placeTagsField.text
+        let latitude = coordinates.latitude
+        let longitude = coordinates.longitude
+        
+        
         
         // not sure what exclamations are doing here, need to figure out
-        place = Place(name: name!, photo: photo!, tags: tags!, description: description!)
+        place = Place(name: name!, photo: photo!, tags: tags!, description: description!, latitude: latitude, longitude: longitude)
         
         delegate.didTapSavePlace(place: place!)
         dismiss(animated: true, completion: nil)
@@ -150,7 +154,5 @@ class AddPlaceViewController: UIViewController, UIImagePickerControllerDelegate,
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
         coordinates = location?.coordinate
-        
-        print(coordinates)
     }
 }

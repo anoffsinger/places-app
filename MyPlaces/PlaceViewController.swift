@@ -15,11 +15,11 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate, MKMapViewDele
 
     var place: Place!
     
+    var locationManager : CLLocationManager!
     
     @IBOutlet weak var placeTitle: UILabel!
     @IBOutlet weak var placeDescription: UILabel!
     @IBOutlet weak var placeTags: UILabel!
-    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var placePhoto: UIImageView!
     @IBOutlet weak var backButton: UIButton!
@@ -36,16 +36,28 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate, MKMapViewDele
         placeDescription.sizeToFit()
         
         let descriptionBottom = placeDescription.frame.maxY
-        tags.frame.origin.y = descriptionBottom + 10
+        tags.frame.origin.y = descriptionBottom + 20
+        
+        let tagsBottom = tags.frame.maxY
+        mapView.frame.origin.y = tagsBottom + 20
+        
+        print(place.longitude)
+        print(place.latitude)
+        
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapView.delegate = self
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
         
-        // set this to the coordinate from class
-        mapView.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1)), animated: true)
+        mapView.delegate = self
+        mapView.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(place.latitude, place.longitude), MKCoordinateSpanMake(0.001, 0.001)), animated: false)
+        addPin()
+        
+        
+        
     }
     
     
@@ -56,6 +68,51 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate, MKMapViewDele
     
     @IBAction func didPressBack(_ sender: Any) {
         navigationController!.popViewController(animated: true)
+    }
+
+    func addPin() {
+        let annotation = MKPointAnnotation()
+        let locationCoordinate = CLLocationCoordinate2DMake(place.latitude, place.longitude)
+        annotation.coordinate = locationCoordinate
+        mapView.addAnnotation(annotation)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseID = "myAnnotationView"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
+        if (annotationView == nil) {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+        }
+        
+        annotationView?.image = UIImage(named: "pin.png")
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//        let appleMapsURL = "http://maps.apple.com/?ll=\(view.annotation?.coordinate.latitude),\(view.annotation?.coordinate.longitude)"
+//        print(view.annotation?.coordinate.latitude)
+//        print(view.annotation?.coordinate.longitude)
+//        UIApplication.shared.open(NSURL(string: appleMapsURL) as! URL)
+        
+        openMapForPlace()
+    }
+    
+    func openMapForPlace() {
+        
+        let latitude:CLLocationDegrees =  place.latitude
+        let longitude:CLLocationDegrees =  place.longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = place.name
+        mapItem.openInMaps(launchOptions: options)
     }
     
 }

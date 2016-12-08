@@ -15,6 +15,7 @@ class CollectionDetailViewController: UIViewController, UITableViewDataSource, P
     @IBOutlet weak var collectionLabelView: UILabel!
     @IBOutlet weak var addPlaceButton: UIButton!
     
+    @IBOutlet weak var emptyStateView: UIView!
     @IBOutlet weak var buttonShadowView: UIView!
     
     var collection: Collection!
@@ -39,6 +40,13 @@ class CollectionDetailViewController: UIViewController, UITableViewDataSource, P
         UIApplication.shared.statusBarStyle = .lightContent
         tableView.dataSource = self
         addPlaceButton.layer.cornerRadius = 0.5 * addPlaceButton.bounds.size.width
+        self.tableView.tableFooterView = UIView()
+        
+        if places.count == 0 {
+            emptyStateView.alpha = 1
+        } else {
+            emptyStateView.alpha = 0
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +79,12 @@ class CollectionDetailViewController: UIViewController, UITableViewDataSource, P
         let newIndexPath = IndexPath(row: places.count, section: 0)
         places.append(place)
         tableView.insertRows(at: [newIndexPath], with: .bottom)
+        if places.count == 0 {
+            emptyStateView.alpha = 1
+            
+        } else {
+            emptyStateView.alpha = 0
+        }
     }
     
     
