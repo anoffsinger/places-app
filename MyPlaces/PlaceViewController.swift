@@ -14,7 +14,6 @@ import MapKit
 class PlaceViewController: UIViewController, UIScrollViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
     var place: Place!
-    
     var locationManager : CLLocationManager!
     
     @IBOutlet weak var placeTitle: UILabel!
@@ -22,27 +21,39 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate, MKMapViewDele
     @IBOutlet weak var placeTags: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var placePhoto: UIImageView!
+    @IBOutlet weak var placeAddress: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var tags: UIView!
+    @IBOutlet weak var address: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let standardLabelFontStyle = UIFont.systemFont(ofSize: 14.0, weight: UIFontWeightRegular)
     
     override func viewWillAppear(_ animated: Bool) {
+        scrollView.delegate = self
+        
+        
+        print(mapView.frame.maxY)
+        
+        
         placeTitle.text = place.name
         placeDescription.text = place.description
         placeTags.text = place.tags
         placePhoto.image = place.photo
         placeDescription.sizeToFit()
+        placeAddress.text = "\(place.latitude), \(place.longitude)"
         
         let descriptionBottom = placeDescription.frame.maxY
-        tags.frame.origin.y = descriptionBottom + 20
+        tags.frame.origin.y = descriptionBottom + 22
         
         let tagsBottom = tags.frame.maxY
         mapView.frame.origin.y = tagsBottom + 20
         
-        print(place.longitude)
-        print(place.latitude)
+        let mapBottom = mapView.frame.maxY
+        address.frame.origin.y = mapBottom + 4
+        
+        scrollView.contentSize = CGSize(width: 375, height: address.frame.maxY + 140)
         
     }
 
