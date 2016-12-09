@@ -33,10 +33,6 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate, MKMapViewDele
     override func viewWillAppear(_ animated: Bool) {
         scrollView.delegate = self
         
-        
-        print(mapView.frame.maxY)
-        
-        
         placeTitle.text = place.name
         placeDescription.text = place.description
         placeTags.text = place.tags
@@ -60,19 +56,14 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate, MKMapViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
+//        locationManager = CLLocationManager()
+//        locationManager.delegate = self
         
         mapView.delegate = self
         mapView.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(place.latitude, place.longitude), MKCoordinateSpanMake(0.001, 0.001)), animated: false)
         addPin()
-        
-        
-        
     }
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -88,23 +79,21 @@ class PlaceViewController: UIViewController, UIScrollViewDelegate, MKMapViewDele
         mapView.addAnnotation(annotation)
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView( _ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseID = "myAnnotationView"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
         if (annotationView == nil) {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
         }
         
         annotationView?.image = UIImage(named: "pin.png")
+        print("working")
         return annotationView
+        
+        
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//        let appleMapsURL = "http://maps.apple.com/?ll=\(view.annotation?.coordinate.latitude),\(view.annotation?.coordinate.longitude)"
-//        print(view.annotation?.coordinate.latitude)
-//        print(view.annotation?.coordinate.longitude)
-//        UIApplication.shared.open(NSURL(string: appleMapsURL) as! URL)
-        
         openMapForPlace()
     }
     
